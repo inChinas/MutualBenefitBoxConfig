@@ -1,10 +1,7 @@
 eureka:
-  instance:
-    hostname: localhost
   client:
-    eureka-server-port: 8761
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.client.eureka-server-port}/eureka
+      defaultZone: http://localhost:8761/eureka
       
 jdbc:
   url: jdbc:oracle:thin:@localhost:1521:orcl
