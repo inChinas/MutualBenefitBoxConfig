@@ -5,8 +5,9 @@ eureka:
     eureka-server-port: 8761
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.client.eureka-server-port}/eureka
-
-jdbc.url=jdbc:oracle:thin:@localhost:1521:orcl
-jdbc.username=xiaobai
-jdbc.password=zeze1239
-jdbc.driverClassName=oracle.jdbc.OracleDriver
+      
+jdbc:
+  url: jdbc:oracle:thin:@localhost:1521:orcl
+  username: xiaobai
+  password: zeze1239
+  driverClassName: oracle.jdbc.OracleDriver
