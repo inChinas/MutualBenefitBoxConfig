@@ -18,3 +18,27 @@ jdbc:
   username: xiaobai
   password: zeze1239
   driverClassName: oracle.jdbc.OracleDriver
+
+druid:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@//localhost:1521/orcl
+    username: xiaobai
+    publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKoJVYPhRMJv0e7HL3fN9GnnQPOvpPcVS3elNxWmkSI0ZxzV7xA9pmGP8BX9S3Kg7Tu7LRZrrBvkQiXPSkSAd/MCAwEAAQ==
+    password: od7Igq0oQBYNaKt/pBRzHLVVO06VoRD4dKmkCe79lsbHEJSVZc34R0DlLICPEBnh3PG4e7FqJLgyE6aL3uzzaw==
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 1
+    minIdle: 1
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,slf4j,config
+    connectionProperties: config.decrypt=true;config.decrypt.key=${publicKey};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    useGlobalDataSourceStat: true
