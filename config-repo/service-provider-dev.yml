@@ -14,12 +14,6 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${eureka.client.eureka-server-port}/eureka
 
 jdbc:
-  url: jdbc:oracle:thin:@localhost:1521:orcl
-  username: xiaobai
-  password: zeze1239
-  driverClassName: oracle.jdbc.OracleDriver
-
-druid:
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@//localhost:1521/orcl
