@@ -16,19 +16,19 @@ eureka:
 jdbc:
   datasource:
     master:
-      driverClassName: oracle.jdbc.driver.OracleDriver
+      driverClassName: oracle.jdbc.OracleDriver
       url: jdbc:oracle:thin:@//localhost:1521/orcl
       username: xiaobai
       publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKd5LQOK81Mq/NFDZYFZcynL/rRHIuIQ+oBVjR0ut7IAfmMoQEMaAi3g2MKEVHWN2dUaQK9O68C1OnVKO0x/W6MCAwEAAQ==
       password: NQZWLdO9qBN2DZAIdIZileCNQx9HHg/Jv1jIdaj47WYex5Xnj/NjZUx/jKFPXJdTVPUAmsONTa3MHcUhK8khVQ==
-      connectionProperties: config.decrypt=true;config.decrypt.key=${publicKey};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      connectionProperties: config.decrypt=true;config.decrypt.key=${jdbc.datasource.master.publicKey};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     cluster:
-      driverClassName: oracle.jdbc.driver.OracleDriver
+      driverClassName: oracle.jdbc.OracleDriver
       url: jdbc:oracle:thin:@//localhost:1521/orcl
       username: xiaobai
       publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKd5LQOK81Mq/NFDZYFZcynL/rRHIuIQ+oBVjR0ut7IAfmMoQEMaAi3g2MKEVHWN2dUaQK9O68C1OnVKO0x/W6MCAwEAAQ==
       password: NQZWLdO9qBN2DZAIdIZileCNQx9HHg/Jv1jIdaj47WYex5Xnj/NjZUx/jKFPXJdTVPUAmsONTa3MHcUhK8khVQ==
-      connectionProperties: config.decrypt=true;config.decrypt.key=${publicKey};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      connectionProperties: config.decrypt=true;config.decrypt.key=${jdbc.datasource.cluster.publicKey};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 1
     minIdle: 1
