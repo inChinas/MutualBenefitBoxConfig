@@ -15,11 +15,12 @@ eureka:
 
 jdbc:
   datasource:
-    driverClassName: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@//localhost:1521/orcl
-    username: xiaobai
-    publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKd5LQOK81Mq/NFDZYFZcynL/rRHIuIQ+oBVjR0ut7IAfmMoQEMaAi3g2MKEVHWN2dUaQK9O68C1OnVKO0x/W6MCAwEAAQ==
-    password: NQZWLdO9qBN2DZAIdIZileCNQx9HHg/Jv1jIdaj47WYex5Xnj/NjZUx/jKFPXJdTVPUAmsONTa3MHcUhK8khVQ==
+    master:
+      driverClassName: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@//localhost:1521/orcl
+      username: xiaobai
+      publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKd5LQOK81Mq/NFDZYFZcynL/rRHIuIQ+oBVjR0ut7IAfmMoQEMaAi3g2MKEVHWN2dUaQK9O68C1OnVKO0x/W6MCAwEAAQ==
+      password: NQZWLdO9qBN2DZAIdIZileCNQx9HHg/Jv1jIdaj47WYex5Xnj/NjZUx/jKFPXJdTVPUAmsONTa3MHcUhK8khVQ==
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 1
     minIdle: 1
@@ -34,5 +35,5 @@ jdbc:
     poolPreparedStatements: true
     maxPoolPreparedStatementPerConnectionSize: 20
     filters: stat,wall,slf4j,config
-    connectionProperties: config.decrypt=true;config.decrypt.key=${publicKey};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    connectionProperties: config.decrypt=true;config.decrypt.key=${master.publicKey};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     useGlobalDataSourceStat: true
