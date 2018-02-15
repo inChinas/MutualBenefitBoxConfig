@@ -23,9 +23,9 @@ jdbc:
       password: NQZWLdO9qBN2DZAIdIZileCNQx9HHg/Jv1jIdaj47WYex5Xnj/NjZUx/jKFPXJdTVPUAmsONTa3MHcUhK8khVQ==
       connectionProperties: config.decrypt=true;config.decrypt.key=${jdbc.datasource.master.publicKey};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     cluster:
-      driverClassName: oracle.jdbc.OracleDriver
-      url: jdbc:oracle:thin:@//localhost:1521/orcl
-      username: xiaobai
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/blogs
+      username: root
       publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKd5LQOK81Mq/NFDZYFZcynL/rRHIuIQ+oBVjR0ut7IAfmMoQEMaAi3g2MKEVHWN2dUaQK9O68C1OnVKO0x/W6MCAwEAAQ==
       password: NQZWLdO9qBN2DZAIdIZileCNQx9HHg/Jv1jIdaj47WYex5Xnj/NjZUx/jKFPXJdTVPUAmsONTa3MHcUhK8khVQ==
       connectionProperties: config.decrypt=true;config.decrypt.key=${jdbc.datasource.cluster.publicKey};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
