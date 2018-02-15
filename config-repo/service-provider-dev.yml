@@ -16,7 +16,7 @@ eureka:
 jdbc:
   datasource:
     master:
-      driverClassName: oracle.jdbc.OracleDriver
+      driverClassName: oracle.jdbc.driver.OracleDriver
       url: jdbc:oracle:thin:@//localhost:1521/orcl
       username: xiaobai
       publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKd5LQOK81Mq/NFDZYFZcynL/rRHIuIQ+oBVjR0ut7IAfmMoQEMaAi3g2MKEVHWN2dUaQK9O68C1OnVKO0x/W6MCAwEAAQ==
