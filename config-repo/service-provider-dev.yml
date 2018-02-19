@@ -5,6 +5,11 @@ spring:
   application:
     name: service-provider
 
+ribbon:
+  eager-load:
+    enabled: true
+    clients: service-provider
+
 eureka:
   instance:
     hostname: localhost
@@ -12,6 +17,7 @@ eureka:
     eureka-server-port: 8761
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.client.eureka-server-port}/eureka
+      
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%15.15t] %-40.40c{1.} [%X{user}] : %m%n"
