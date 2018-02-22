@@ -1,1 +1,18 @@
+spring:
+  application:
+    name: service-gateway
+server:
+  port: 8081
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    eureka-server-port: 8761
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.client.eureka-server-port}/eureka
 
+zuul:
+  routes:
+    provider-user:
+      path: /provider/**
+      serviceId: service-provider
