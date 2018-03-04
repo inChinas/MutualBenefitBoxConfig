@@ -1,1 +1,47 @@
+server:
+  port: 8083
 
+spring:
+  application:
+    name: shiro
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    eureka-server-port: 8761
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.client.eureka-server-port}/eureka
+
+ribbon:
+  eager-load:
+    enabled: true
+    clients: shiro
+      
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%15.15t] %-40.40c{1.} [%X{user}] : %m%n"
+
+jdbc:
+  datasource:
+    driverClassName: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@//localhost:1521/orcl
+    username: xiaobai
+    publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKd5LQOK81Mq/NFDZYFZcynL/rRHIuIQ+oBVjR0ut7IAfmMoQEMaAi3g2MKEVHWN2dUaQK9O68C1OnVKO0x/W6MCAwEAAQ==
+    password: NQZWLdO9qBN2DZAIdIZileCNQx9HHg/Jv1jIdaj47WYex5Xnj/NjZUx/jKFPXJdTVPUAmsONTa3MHcUhK8khVQ==
+    connectionProperties: config.decrypt=true;config.decrypt.key=${jdbc.datasource.master.publicKey};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 1
+    minIdle: 1
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,slf4j,config
+    useGlobalDataSourceStat: true
